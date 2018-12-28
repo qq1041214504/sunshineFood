@@ -20,35 +20,28 @@ public class ProductController {
 	@Autowired
 	private ProductService productservice;
 	
-	@RequestMapping("dianpu")
-	public String dianpu(HttpServletRequest request,Model model) {
-		List<Seller> seller = productservice.SellerSelect();
-		request.setAttribute("seller", seller);
-		model.addAttribute("seller",seller);
-		return null;
-	}
-	
-	@RequestMapping("shangpinfenlei")
-	public String shangpingfenlei(HttpServletRequest request,Model model) {
-		List<Product> product = productservice.Productselect();
-		request.setAttribute("product", product);
-		model.addAttribute("product",product);
-		return null;
-	}
-	
-	@RequestMapping("dianjiashangping")
-	public String dianjiaID(HttpServletRequest request,Model model,Integer sellerId) {
-		List<Product> productseller = productservice.productSellerSelect(sellerId);
-		request.setAttribute("productseller", productseller);
-		model.addAttribute("productseller",productseller);
-		return null;
-	}
-	
-	@RequestMapping("selectProductCategory")
-	public String selectProductCategory(HttpServletRequest request,Model model) {
-		List<ProductCategory> ProductCategory = productservice.selectProductCategory();
+	@RequestMapping("productcategoryselect")
+	public String productcategoryselect(HttpServletRequest request,Model model,Integer seller) {
+		List<ProductCategory> ProductCategory = productservice.productcategoryselect(seller);
 		request.setAttribute("ProductCategory", ProductCategory);
 		model.addAttribute("ProductCategory",ProductCategory);
 		return null;
 	}
+	
+	@RequestMapping("ProductSelect")
+	public String ProductSelect(HttpServletRequest request,Model model,Integer categoryId) {
+		List<Product> Product = productservice.ProductSelect(categoryId);
+		request.setAttribute("Product", Product);
+		model.addAttribute("Product",Product);
+		return null;
+	}
+	
+	/*@RequestMapping("select")
+	public String select(HttpServletRequest request,Model model) {
+		List<ProductCategory> ProductCategory=productservice.select();
+		request.setAttribute("ProductCategory", ProductCategory);
+		model.addAttribute("ProductCategory",ProductCategory);
+		return null;
+		
+	}*/
 }
