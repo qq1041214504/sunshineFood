@@ -1,0 +1,30 @@
+server: 
+        port: 8082
+        contextPath: /sunshine/
+spring: 
+    mvc: 
+        view: 
+        prefix: /WEB-INF/jsp/
+        suffix: .jsp
+    datasource: 
+        driver-class-name: com.mysql.jdbc.Driver
+        username: root
+        password: root
+        url: jdbc:mysql://localhost:3306/appinfodb
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000 
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+        
+mybatis: 
+        mapper-locations: classpath:mapper/*.xml
+        type-aliases-package: org.entity

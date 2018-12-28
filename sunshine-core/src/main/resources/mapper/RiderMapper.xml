@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.dao.RiderMapper">
+
+<select id="selectByPhone" resultType="rider">
+select * from rider where riderphone = #{riderPhone}
+</select>
+
+<insert id="insertRider">
+INSERT `rider` (`riderName`,`riderPassword`,`riderphone`,`riderStatus`) VALUE (#{riderName},#{riderPassword},#{riderphone},'0')
+</insert>
+
+<update id="updateRider">
+update rider set 
+<if test="riderName!=null">
+riderName=#{riderName},
+</if>
+<if test="riderPassword!=null">
+riderPassword=#{riderPassword},
+</if>
+<if test="riderphone!=null">
+riderphone=#{riderphone},
+</if>
+ where 
+ <if test="riderId!=null">
+ 	riderId=#{riderId}
+ </if>
+</update>
+
+<delete id="deleteRider">
+	delete from rider where riderId=#{riderId}
+</delete>
+</mapper>

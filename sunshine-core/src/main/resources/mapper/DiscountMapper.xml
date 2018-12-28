@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.dao.DiscountMapper">
+<select id="getAllDiscountByBuyerId" resultType="discount">
+	 SELECT * FROM `discount` AS c WHERE 
+ c.discountId IN (SELECT b.discountId FROM `buyerdiscount` AS b,`buyer` AS a 
+  WHERE a.buyerId=b.buyerId AND a.buyerId=#{buyerId})
+</select>
+<delete id="deleteDiscount">
+  DELETE FROM `buyerdiscount` WHERE discountId =#{discountId} AND buyerId=#{buyerId}
+  </delete>
+  <insert id="insertBuyerIdDiscount">
+  INSERT buyerdiscount (`buyerId`,`discountId`,`discountstartDate`,`discountexpireDate`) VALUE(#{buyerId},#{discountId},NOW(),DATE_ADD(NOW(),INTERVAL 3 DAY))
+    </insert>
+    
+    <insert id="insertDiscount">
+      INSERT `discount` (`discountName`,`discountPrice`,`discountmin`) VALUE (#{discountName},#{discountPrice},#{discountmin})
+    </insert>
+    
+    <select id="getAllDiscountByDiscountId" resultType="discount">
+     SELECT * FROM `discount` WHERE 
+ discountId = #{discountId}
+    </select>
+  </mapper>
