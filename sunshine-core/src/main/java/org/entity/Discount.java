@@ -1,7 +1,7 @@
 package org.entity;
 
 public class Discount {
-	private int discount_Id;								//优惠ID
+	private int discountId;								//优惠ID
 	
 	private String discountName;							//优惠名
 	
@@ -10,13 +10,7 @@ public class Discount {
 	private double discountMin;							//最低可用
 	
 
-	public int getDiscount_Id() {
-		return discount_Id;
-	}
-
-	public void setDiscount_Id(int discount_Id) {
-		this.discount_Id = discount_Id;
-	}
+	
 
 	public String getDiscountName() {
 		return discountName;
@@ -40,6 +34,14 @@ public class Discount {
 
 	public void setDiscountMin(double discountMin) {
 		this.discountMin = discountMin;
+	}
+
+	public int getDiscountId() {
+		return discountId;
+	}
+
+	public void setDiscountId(int discountId) {
+		this.discountId = discountId;
 	}
 
 	

@@ -11,7 +11,7 @@ public class Seller {
 	
 	private String sellerPhone;										//商家联系方式
 	
-	private int selle_Reputation;										//商家信誉（1-5级）
+	private int selleReputation;										//商家信誉（1-5级）
 	
 	private int sellerState;											//状态（未营业：0 营业：1）
 	
@@ -65,13 +65,7 @@ public class Seller {
 		this.sellerPhone = sellerPhone;
 	}
 
-	public int getSelle_Reputation() {
-		return selle_Reputation;
-	}
 
-	public void setSelle_Reputation(int selle_Reputation) {
-		this.selle_Reputation = selle_Reputation;
-	}
 
 	public int getSellerState() {
 		return sellerState;
@@ -122,6 +116,14 @@ public class Seller {
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+
+	public int getSelleReputation() {
+		return selleReputation;
+	}
+
+	public void setSelleReputation(int selleReputation) {
+		this.selleReputation = selleReputation;
 	}
 
 	
