@@ -12,14 +12,13 @@ import renying.service.BuyerService;
 
 @RestController
 @RequestMapping("buyerLogin")
+//用户登录Controller
 public class LoginController {
 	@Autowired
 	private BuyerService buyerService;
 	
 	@RequestMapping("login")
-	@ResponseBody
 	public Buyer login(@RequestParam("buyerName")String buyerName,@RequestParam("buyerPassword")String buyerPassword) {
-		System.out.println("进来了方法");
 		if(buyerService.login(buyerName,buyerPassword)!=null) {
 			return buyerService.login(buyerName,buyerPassword);
 		}
