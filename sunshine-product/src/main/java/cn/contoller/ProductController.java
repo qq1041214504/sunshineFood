@@ -36,7 +36,7 @@ public class ProductController {
 		return null;
 	}
 	
-	/*@RequestMapping("select")shenzhijie
+	/*@RequestMapping("select")
 	public String select(HttpServletRequest request,Model model) {
 		List<ProductCategory> ProductCategory=productservice.select();
 		request.setAttribute("ProductCategory", ProductCategory);
