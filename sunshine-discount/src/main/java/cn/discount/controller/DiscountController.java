@@ -17,7 +17,7 @@ public class DiscountController {
 	@RequestMapping("getAllForBuyer")
 	public Object getAllForBuyer(@RequestParam("buyerId")int buyerId,HttpServletResponse response){
 		
-		return discountService.getAllDiscountByBuyerId(buyerId);
+		return discountService.getCountDiscountByBuyerId(buyerId);
 		
 	}
 }

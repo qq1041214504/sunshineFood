@@ -24,4 +24,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
      SELECT * FROM `discount` WHERE 
  discountId = #{discountId}
     </select>
+    
+    <select id="getCountDiscountByBuyerId" resultType="_int">
+	 SELECT count(1) FROM `discount` AS c WHERE 
+ c.discountId IN (SELECT b.discountId FROM `buyerdiscount` AS b,`buyer` AS a 
+  WHERE a.buyerId=b.buyerId AND a.buyerId=#{buyerId})
+</select>
   </mapper>

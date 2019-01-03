@@ -15,4 +15,7 @@ public interface DiscountMapper {
 	int insertDiscount(Discount discount);  //添加优惠卷
 	
 	Discount getAllDiscountByDiscountId(@Param("discountId")int discountId);  //查询一张优惠卷
+	
+	int getCountDiscountByBuyerId(@Param("buyerId")int buyerId); //查询某个用户的所有优惠卷张数
+
 }
