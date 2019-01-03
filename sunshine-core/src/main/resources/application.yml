@@ -8,9 +8,9 @@ spring:
         suffix: .jsp
     datasource: 
         driver-class-name: com.mysql.jdbc.Driver
-        username: root
-        password: 1234
-        url: jdbc:mysql://localhost:3306/takeaway
+        username: zy
+        password: zy
+        url: jdbc:mysql://192.168.11.79:3306/takeaway
         filters: stat
         maxActive: 20
         initialSize: 1
