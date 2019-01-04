@@ -13,6 +13,7 @@ import renying.service.BuyerService;
 
 @RestController
 @RequestMapping("buyerLogin")
+
 //用户登录Controller
 public class LoginController {
 	@Autowired
@@ -26,6 +27,7 @@ public class LoginController {
 			session.setAttribute("buyerSession",buyer );
 			return buyer;
 		}
+		
 		return null;
 		
 	}

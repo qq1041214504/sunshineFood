@@ -19,7 +19,7 @@ public class BuyerController {
 		if(buyerService.addBuyer(buyerName, buyerPassword)>0) {
 			return "添加成功";
 		}
-		return "添加失败";
+		return null;
 	}
 	
 	//验证用户名是否重名
@@ -28,6 +28,6 @@ public class BuyerController {
 		if(buyerService.selByName(buyerName)!=null) {
 			return "名字重复";
 		}
-		return "名字没有重复";
+		return null;
 	}
 }
