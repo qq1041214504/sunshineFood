@@ -22,7 +22,7 @@ public class BuyerController {
 		return null;
 	}
 	
-	//验证用户名是否重名..
+	//验证用户名是否重名...
 	@RequestMapping("repeatBuyerName")
 	public String repeatBuyerName(@RequestParam("buyerName")String buyerName) {
 		if(buyerService.selByName(buyerName)!=null) {
