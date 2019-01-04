@@ -42,4 +42,10 @@ public class DiscountServiceImpl implements DiscountService {
 		return null;
 	}
 
+	@Override
+	public int getCountDiscountByBuyerId(int buyerId) {
+		// TODO Auto-generated method stub
+		return discountMapper.getCountDiscountByBuyerId(buyerId);
+	}
+
 }

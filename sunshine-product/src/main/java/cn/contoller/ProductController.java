@@ -2,38 +2,35 @@ package cn.contoller;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletRequest;
 
-import org.entity.Product;
-import org.entity.ProductCategory;
-import org.entity.Seller;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import cn.service.ProductService;
 
-@Controller
+@RestController
 public class ProductController {
 	
 	@Autowired
 	private ProductService productservice;
 	
 	@RequestMapping("productcategoryselect")
-	public String productcategoryselect(HttpServletRequest request,Model model,Integer seller) {
-		List<ProductCategory> ProductCategory = productservice.productcategoryselect(seller);
+	public Object productcategoryselect(HttpServletRequest request,Model model,Integer sellerId) {
+		/*List<ProductCategory> ProductCategory = productservice.productcategoryselect(seller);
 		request.setAttribute("ProductCategory", ProductCategory);
-		model.addAttribute("ProductCategory",ProductCategory);
-		return null;
+		model.addAttribute("ProductCategory",ProductCategory);*/
+	
+        return productservice.productcategoryselect(sellerId);
 	}
 	
 	@RequestMapping("ProductSelect")
-	public String ProductSelect(HttpServletRequest request,Model model,Integer categoryId) {
-		List<Product> Product = productservice.ProductSelect(categoryId);
-		request.setAttribute("Product", Product);
-		model.addAttribute("Product",Product);
-		return null;
+	public Object ProductSelect(Integer categoryId) {
+		
+		return productservice.ProductSelect(categoryId);
 	}
 	
 	/*@RequestMapping("select")

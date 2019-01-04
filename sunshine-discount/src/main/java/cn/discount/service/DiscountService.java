@@ -16,4 +16,5 @@ public interface DiscountService {
 	
 	Discount getAllDiscountByDiscountId(int discountId);  //查询一张优惠卷
 
+	int getCountDiscountByBuyerId(int buyerId); //查询某个用户的所有优惠卷张数
 }
