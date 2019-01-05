@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.dao.OrderMapper"> 
+	<select id="getAllOrder" resultType="OrderMaster">
+		select * from ordermaster
+	</select>
+	
+	<select id="getOrderMasterById" resultMap="order">
+		SELECT d.riderId,d.riderName,d.riderphone',
+		b.buyerId,b.buyerName,b.buyerPhone,
+		s.sellerId,s.sellerName,s.sellerPhone,
+		o.orderId,o.orderAmount,o.updateTime
+		FROM riderorder r,rider d,ordermaster o ,buyer b,seller s
+		WHERE r.`riderId` = d.`riderId` 
+		AND r.`orderId` = o.`orderId`
+		AND o.`buyerId` = b.`buyerId`
+		AND o.`sellerId` = s.`sellerId`
+		AND o.orderId = #{orderId}
+	</select>
+	
+	
+	<resultMap type="Paramt" id="order">
+		<result column="orderId" property="orderId"/>
+		<result column="orderAmount" property="orderAmount"/>
+		<result column="updateTime" property="updateTime"/>
+		<result column="riderId" property="riderId"/>
+		<result column="riderName" property="riderName"/>
+		<result column="riderphone" property="riderPhone"/>
+		<result column="sellerId" property="sellerId"/>
+		<result column="sellerName" property="sellerName"/>
+		<result column="sellerPhone" property="sellerPhone"/>
+		<result column="buyerId" property="buyerId"/>
+		<result column="buyerName" property="buyerName"/>
+		<result column="buyerPhone" property="buyerPhone"/>
+	</resultMap>
+	
+</mapper>
