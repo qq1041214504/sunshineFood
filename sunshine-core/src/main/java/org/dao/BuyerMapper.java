@@ -1,5 +1,7 @@
 package org.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -11,4 +13,6 @@ public interface BuyerMapper {
 	
 	@Insert("insert into buyer(buyerName,buyerPassword) values (#{buyerName},#{buyerPassword})")
 	int addBuyer(@Param("buyerName")String buyerName,@Param("buyerPassword")String buyerPassword);
+	
+	List<Buyer> getAllBuyer();
 }
