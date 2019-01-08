@@ -10,5 +10,4 @@ public class ApplicationProduct {
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(ApplicationProduct.class, args);
 	}
-
 }

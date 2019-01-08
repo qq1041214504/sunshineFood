@@ -29,5 +29,33 @@ public class ProductServiceImpl implements ProductService{
 		return productmapper.ProductSelect(categoryId);
 	}
 
+	@Override
+	public List<Product> SpSelect(Integer sellerid) {
+		
+		return productmapper.SpSelect(sellerid);
+	}
+
+	@Override
+	public int AddShangpin(Product product) {
+	
+		return 	productmapper.AddShangpin(product);
+		
+	}
+
+	@Override
+	public int ShangPinUpdate(Product product) {
+		
+		return productmapper.ShangPinUpdate(product);
+		
+	}
+
+	@Override
+	public int ShangPinDel(Integer productId) {
+		
+		return productmapper.ShangPinDel(productId);
+	}
+
+
+
 
 }
