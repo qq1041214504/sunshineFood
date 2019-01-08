@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.dao.AddressMapper">
+	<select id="getDeliveryByBuyerId" resultType="delivery">
+	SELECT * FROM `delivery` WHERE  buyerId=#{buyerId}
+	</select>
+	
+	<select id="getDeliveryByDeliveryId" resultType="delivery">
+	SELECT * FROM `delivery` WHERE  deliveryId=#{deliveryId}
+	</select>
+	
+	<insert id="addDelivery">
+	INSERT `delivery`(`addressName`,`phone`,`deliveryName`,`deliveryDesc`,`buyerId`)
+	VALUE(#{addressName},#{phone},#{deliveryName},#{deliveryDesc},#{buyerId});
+	</insert>
+	
+	<delete id="delDelivery">
+	delete from delivery where deliveryId = #{deliveryId}
+	</delete>
+	
+	<update id="updateDelivery">
+	update `delivery` set `addressName`=#{addressName},`phone`=#{phone},
+	`deliveryName`=#{deliveryName},`deliveryDesc`=#{deliveryDesc},`buyerId`=#{buyerId} where deliveryId=#{deliveryId}
+	</update>
+</mapper>
