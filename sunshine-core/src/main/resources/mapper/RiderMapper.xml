@@ -5,32 +5,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="org.dao.RiderMapper">
 
-<select id="selectByPhone" resultType="rider">
-select * from rider where riderphone = #{riderPhone}
-</select>
+	<select id="selectByPhone" resultType="rider">
+		select * from rider where riderphone = #{riderPhone}
+	</select>
 
-<insert id="insertRider">
-INSERT `rider` (`riderName`,`riderPassword`,`riderphone`,`riderStatus`) VALUE (#{riderName},#{riderPassword},#{riderphone},'0')
-</insert>
+	<insert id="insertRider">
+		INSERT `rider` (`riderName`,`riderPassword`,`riderphone`,`riderStatus`)
+		VALUE (#{riderName},#{riderPassword},#{riderphone},'0')
+	</insert>
 
-<update id="updateRider">
-update rider set 
-<if test="riderName!=null">
-riderName=#{riderName},
-</if>
-<if test="riderPassword!=null">
-riderPassword=#{riderPassword},
-</if>
-<if test="riderphone!=null">
-riderphone=#{riderphone},
-</if>
- where 
- <if test="riderId!=null">
- 	riderId=#{riderId}
- </if>
-</update>
+	<update id="updateRider">
+		update rider set
+		<if test="riderName!=null">
+			riderName=#{riderName},
+		</if>
+		<if test="riderPassword!=null">
+			riderPassword=#{riderPassword},
+		</if>
+		<if test="riderphone!=null">
+			riderphone=#{riderphone},
+		</if>
+		where
+		<if test="riderId!=null">
+			riderId=#{riderId}
+		</if>
+	</update>
 
-<delete id="deleteRider">
-	delete from rider where riderId=#{riderId}
-</delete>
+	<delete id="deleteRider">
+		delete from rider where riderId=#{riderId}
+	</delete>
 </mapper>
