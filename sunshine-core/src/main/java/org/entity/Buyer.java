@@ -10,6 +10,25 @@ public class Buyer {
 	private String buyerPhone;								//联系方式
 	
 	private String buyerEmail;								//邮箱
+	
+	private String logo;									//头像地址
+	
+	private int state;										//等级
+	public String getLogo() {
+		return logo;
+	}
+
+	public void setLogo(String logo) {
+		this.logo = logo;
+	}
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
 
 	public int getBuyerId() {
 		return buyerId;
