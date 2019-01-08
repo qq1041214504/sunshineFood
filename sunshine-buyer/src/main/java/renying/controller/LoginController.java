@@ -1,5 +1,6 @@
 package renying.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.entity.Buyer;
@@ -21,15 +22,12 @@ public class LoginController {
 	
 	@RequestMapping("login")
 	public Buyer login(@RequestParam("buyerName")String buyerName,@RequestParam("buyerPassword")String buyerPassword,
-						HttpSession session) {
+						HttpServletRequest reqeust,HttpSession session) {
 		Buyer buyer=buyerService.login(buyerName, buyerPassword);
 		if(buyer!=null) {
-			session.setAttribute("buyerSession",buyer );
+			session.setAttribute("buyerSession",buyer);
 			return buyer;
 		}
-		
 		return null;
-		
 	}
-	
 }

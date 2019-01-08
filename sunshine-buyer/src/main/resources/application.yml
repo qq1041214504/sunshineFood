@@ -10,7 +10,7 @@ spring:
         driver-class-name: com.mysql.jdbc.Driver
         username: ry
         password: ry
-        url: jdbc:mysql://192.168.11.79:3306/takeaway
+        url: jdbc:mysql://192.168.11.77:3306/takeaway
         filters: stat
         maxActive: 20
         initialSize: 1

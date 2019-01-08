@@ -1,5 +1,7 @@
 package renying.service.impl;
 
+import java.util.List;
+
 import org.dao.BuyerMapper;
 import org.entity.Buyer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,11 @@ public class BuyerServiceImpl implements BuyerService{
 	@Override
 	public Buyer selByName(String buyerName) {
 		return buyerMapper.login(buyerName);
+	}
+
+	@Override
+	public List<Buyer> getAllBuyer() {
+		return buyerMapper.getAllBuyer();
 	}
 
 }
