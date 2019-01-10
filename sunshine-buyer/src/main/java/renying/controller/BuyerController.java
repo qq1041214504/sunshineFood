@@ -28,7 +28,7 @@ public class BuyerController {
 	}
 	 
 	//验证用户名是否重名
-	@RequestMapping("repeatBuyerName")
+	@RequestMapping("repeatBuyerName")			
 	public String repeatBuyerName(@RequestParam("buyerName")String buyerName) {
 		if(buyerService.selByName(buyerName)!=null) {
 			return "名字重复";
@@ -44,6 +44,7 @@ public class BuyerController {
 	@RequestMapping("getBuyerSession")
 	public Buyer getBuyerSession(HttpSession session) {
 		System.out.println("获取的session："+session.getAttribute("buyerSession"));
+		
 		return (Buyer)session.getAttribute("buyerSession");
 	}
 }
