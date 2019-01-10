@@ -14,7 +14,7 @@ public class Comment {
 	
 	private String commentDesc;						    //描述
 	
-	private Date createTime;                            //创建时间
+	private String createTime;                            //创建时间
 	
 	private int orderId;                                //订单Id
 	
@@ -22,15 +22,9 @@ public class Comment {
 	
 	private String replyDesc;                           //卖家回复内容
 	
-	private Date replyTime;                             //卖家回复时间 
+	private String replyTime;                             //卖家回复时间 
 	
-	public Date getCreateTime() {
-		return createTime;
-	}
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
 
 	public int getOrderId() {
 		return orderId;
@@ -56,11 +50,21 @@ public class Comment {
 		this.replyDesc = replyDesc;
 	}
 
-	public Date getReplyTime() {
+	
+
+	public String getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getReplyTime() {
 		return replyTime;
 	}
 
-	public void setReplyTime(Date replyTime) {
+	public void setReplyTime(String replyTime) {
 		this.replyTime = replyTime;
 	}
 
