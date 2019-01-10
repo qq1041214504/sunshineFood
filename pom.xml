@@ -109,5 +109,6 @@
     <module>sunshine-backstage</module>
     <module>sunshine-discount</module>
     <module>sunshine-order</module>
+    <module>sunshinefood-address</module>
   </modules>
 </project>
