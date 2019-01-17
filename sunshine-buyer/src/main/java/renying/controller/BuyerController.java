@@ -39,6 +39,7 @@ public class BuyerController {
 	@RequestMapping("getAllBuyer")
 	public List<Buyer> getAllBuyer() {
 		return buyerService.getAllBuyer();
+		
 	}
 	
 	@RequestMapping("getBuyerSession")

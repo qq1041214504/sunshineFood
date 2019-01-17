@@ -15,4 +15,6 @@ public interface BuyerMapper {
 	int addBuyer(@Param("buyerName")String buyerName,@Param("buyerPassword")String buyerPassword);
 	
 	List<Buyer> getAllBuyer();
+	
 }
+

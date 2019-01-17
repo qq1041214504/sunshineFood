@@ -18,7 +18,13 @@ public class CommentController {
 	
 	@RequestMapping("getCommentBySeller")
 	public List<Comment> getCommentBySeller(@RequestParam(required=false,value="sellerId")int sellerId){
-		System.out.println("进来了");
 		return commentService.getCommentBySeller(sellerId);
 	}
+	
+	@RequestMapping("commentList")
+	public List<Comment> commentList(@RequestParam("buyerName")String buyerName){
+		
+		return null;
+	}
+	
 }
